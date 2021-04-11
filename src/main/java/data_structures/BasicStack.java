@@ -7,7 +7,7 @@ public class BasicStack<T> {
     public BasicStack(int length){
         this.length = length;
         data = (T[]) new Object[this.length];
-        this.stackPointer = 0
+        this.stackPointer = 0;
     }
 
     public void push(T element){
@@ -35,8 +35,16 @@ public class BasicStack<T> {
     public T access(T element){
         T temp;
         while(stackPointer > 0){
-
+          temp = pop();
+          if (element.equals(temp)){
+              return temp;
+          }
         }
+        throw new IllegalArgumentException(String.format("could not find - %s - on the stack", element));
+    }
+
+    public int size(){
+        return this.stackPointer;
     }
 
 
