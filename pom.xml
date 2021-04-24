@@ -6,7 +6,13 @@
 
     <groupId>algo</groupId>
     <artifactId>Algorithms</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>FileParser</module>
+        <module>JDBC</module>
+        <module>JDBC</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>15</maven.compiler.source>

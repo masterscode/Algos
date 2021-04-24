@@ -1,14 +1,14 @@
 package algo;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class ToCapCase {
     public static void main(String[] args) {
-        System.out.println(toCapCase("emma is nuel"));
+
+//        System.out.println(toCapCase("emma is nuel"));
+        Set<String> uniq = Set.of("emmanuel", "james", "emmanuel", "paul", "Paul", "Emmanuel");
+
     }
     /**
      * Task
@@ -33,4 +33,9 @@ public class ToCapCase {
         }
         return output.toString().trim();
     }
+
+
+
+    public void overloader(List<Integer> loader){}
+
 }
