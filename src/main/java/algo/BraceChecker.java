@@ -1,6 +1,6 @@
 package algo;
 
-import java.util.*;
+import java.util.Stack;
 
 public class BraceChecker {
     public static boolean isValid(String str) {
@@ -8,17 +8,14 @@ public class BraceChecker {
             return true;
 
         Stack<Character> stack = new Stack<Character>();
-        for (int i = 0; i < str.length(); i++)
-        {
+        for (int i = 0; i < str.length(); i++) {
             char current = str.charAt(i);
-            if (current == '{' || current == '(' || current == '[')
-            {
+            if (current == '{' || current == '(' || current == '[') {
                 stack.push(current);
             }
 
 
-            if (current == '}' || current == ')' || current == ']')
-            {
+            if (current == '}' || current == ')' || current == ']') {
                 if (stack.isEmpty())
                     return false;
 

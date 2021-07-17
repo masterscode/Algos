@@ -1,16 +1,17 @@
 package algoLearn;
 
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 public class Lab {
-
+    public static void main(String[] args) {
+        System.out.println(translateToBraille("D"));
+    }
     public static final String capsPrefix = "000001";
-    public final String space = "000000";
 
     public static Map<String, String> createDictionary() {
+//        String name =
         Map<String, String> brailleDictionary = new HashMap<String, String>();
         brailleDictionary.put("a", "100000");
         brailleDictionary.put("b", "110000");
@@ -41,7 +42,6 @@ public class Lab {
         final Map<String, String> capsBraile = new HashMap<>();
 
         brailleDictionary.forEach((key, value) -> capsBraile.put(key.toUpperCase(), capsPrefix + value));
-
         brailleDictionary.putAll(capsBraile);
         brailleDictionary.put(" ", "000000");
         return brailleDictionary;
@@ -49,7 +49,7 @@ public class Lab {
 
     public static String translateToBraille(String toTranslate) {
         final Map<String, String> brailleDictionary = createDictionary();
-        return Stream.of(toTranslate.split(""))
+        return Arrays.stream(toTranslate.split(""))
                 .map(brailleDictionary::get)
                 .reduce(String::concat)
                 .orElse("");
